@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+    //parametros default, são parametros que a gnt passa o valor direto na função, para não ter problema 
+    // caso o usuário não há coloque 
+    function apresentarPessoa(nome='Enzo',idade='17',hobbie='jogar videogame'){
+        document.write(`Olá meu nome é ${nome} eu tenho ${idade} e meu hobbie é: ${hobbie}`)
+    }
+    apresentarPessoa()//nesse caso ele irá utilizar os parâmetros definidos como default 
+    apresentarPessoa('Ana', '16', 'ler')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
