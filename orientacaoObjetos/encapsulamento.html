@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encapsulamento</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        // //Em vista de o ECMAscript, não ter por si só parâmetros que conseguem fazer com
+        // com que determinado objeto não seja chamado exteriormente, nós atribuimos uma convenção 
+        // que quando tiver um _ antes da variável o programador não deve utilizala sem usar os métodos 
+        // getters e seters, que é basicamente --> getters(colocar um get antes da função para retornar determinado valor)
+        // setters(colocar um set antes da função para mudar determinado valor)
+        // importante destacar que não precisa colocar os () pois o javascript já tem a inteligência de fazer isso 
+
+        //exemplo
+        class Tv{
+            constructor(){
+                this._canais = Array(1,2,6,3)
+                this._canal_ativo = 2
+                this._volume = this._canais.length  
+            }
+            //getters e setters
+            get canalAtivo(){
+                return this._canal_ativo
+            }
+            set CanalAtivo(canal){
+                //como neste caso os valores de canal ativo, só podem admitir valores dentro desta
+                //array _canais, então é legal fazer uma verificação 
+                if (this._canais.indexOf(canal) !== -1){
+                    this._canal_ativo = canal
+                }else{
+                    alert('este canal não existe')
+                }
+            }
+            get Volume(){
+                return this._volume
+            }
+        }
+        let tv = new Tv
+        document.write(tv._canal_ativo, '<br>')
+        tv.CanalAtivo = 7
+        document.write(tv.Volume, '<br>')
+        document.write(tv._canal_ativo, '<br>')
+    </script>
+</head>
+<body>
+
+</body>
+</html>
