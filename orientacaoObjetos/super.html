@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        // o super é um método que sempre vai ter nas classes chamadas de classes filhas
+        // é de suma importância a compreensão que ao, colocar dentro dos parentesis do super, uma 
+        //caracteristica, ela será atrelada ao constructor.
+
+        //super é basicamente colocar as coisas que estão dentro dele no construct da
+        //classe que está no extends
+        class Animal{
+            constructor(cor, tamanho, energia){// descobri também que quem que manda na ordem é a classe pai
+                this.cor = cor
+                this.energia = energia
+                this.tamanho = tamanho
+            }
+            dormir(){
+                if (this.energia != 0){
+                    console.log('ele não está dormindo')
+                }else{
+                    console.log('ele está dormindo')
+                }
+            }
+            realizarAcao(){
+                if (this.energia !=0 ){
+                    console.log('ele consegue realizar a ação')
+                }else{
+                    console.log('ele não consegue realizar a ação')
+                }
+            }
+        }
+        class Cachorro extends Animal{ 
+            constructor(cor, tamanho, energia){
+                super(cor, tamanho, energia)
+            }
+            rosnar(){
+                if(this.tamanho =='grande'){
+                    return true
+                }
+                else{
+                    return false
+                }
+            }
+        }
+        class BorderColie extends Cachorro{
+            constructor(inteligencia,cor, tamanho, energia){
+                super(cor, tamanho, energia)
+                this.inteligencia = inteligencia
+            }
+        }
+        class Passaro extends Animal{
+            constructor(){
+                super()
+            }
+        }
+        class Papagaio extends Passaro{
+            constructor(){
+                super()
+                this.falar = true
+            }
+        }
+        let borderCorlie = new BorderColie('muita','amarelo','grande',5)
+        console.log(borderCorlie)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

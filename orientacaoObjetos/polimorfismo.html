@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        //polimorfismo é sobreescrever funções que já foram definidas antes por classes pais
+        class Animal{
+            constructor(cor,tamanho,peso){
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+            voar(){
+                console.log('está voando')
+            }
+            dormir(){
+                console.log('está dormindo')
+            }
+        }
+        class Passaro extends Animal{
+            constructor(cor, tamanho, peso){
+                super(cor, tamanho, peso)
+            }
+        }
+        class Penguim extends Passaro{
+            constructor(cor,tamanho, peso){
+                super(cor, tamanho,peso)
+            }
+            voar(){//para fazer isso é só literalmente reescrever a função do jeito que você quiser
+                console.log('não voa')
+            }
+        }
+        class Sabia extends Passaro{
+            constructor(cor,tamanho,peso){
+                super(cor, tamanho, peso)
+            }
+        }
+        let sabia = new Sabia('vermelho', 15,900)
+        let penguim= new Penguim('Preto e Branco', 20,700)
+        console.log(penguim.voar(),'penguim')
+        console.log( sabia.voar(),'sabia')
+    </script>
+</head>
+<body>
+
+</body>
+</html>
