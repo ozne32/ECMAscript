@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operadores rest e spread</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //o spread pode ser utilizado tanto para deixar os caracteres mais espalhados, como para colocalos em uma lista
+       //e também pode ser utilizado para colcoar coisas de outra lista dentro de outra lista:
+        let parteAmundo = ['brasil','argentina','EUA']
+        let parteBmundo = ['China', 'Russia', 'Japão']
+        let mundo = ['Cuba','Moçambique', ...parteAmundo, ...parteBmundo]//como pode-se perceber as duas listas seram
+        //incorporadas dentro da lista principal que é a lista mundo.
+        console.log(mundo)
+
+        //pode ser utilizado com objetos também
+        let pessoa1 = {
+            nome:'enzo',
+            idade:17
+        }
+        let endereco_e_pessoa1={
+            ...pessoa1,
+            endereco:'nova york'
+        }
+        console.log(endereco_e_pessoa1)
+
+        //O rest serve, para que por exemplo, como foi citado anteriormente no curso, as funções são bem 
+        //"moldaveis", não precisam receber todos os parâmetros. Legal, então, você pode encaminhar para uma função
+        //por exemplo para fazer uma lista, aí você encaminharia um array, e na hora de colocar os atributos na 
+        //função colocar o ...params para ser lido elemento por elemento da lista informada
+        function listaPessoas(...param){
+            param.forEach(x=>console.log(x))
+        }
+        listaPessoas(['enzo','gabriel','ana','penelope'])
+        //não precisa ser params
+    </script>
+</head>
+<body>
+
+</body>
+</html>
