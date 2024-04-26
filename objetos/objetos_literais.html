@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos literais</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //objetos são análogos a classes, e podem ser declarados por meio de variáveis
+       //e são declarados por pares de chaves e valores, sendo que o que vem do : é a chave
+       // e oq vem dps é o valor
+       // um jeito que dá para ver como isso é útil e quando você tem um formulario --> requisição para pegar
+       //os valores deste formulario formando um objeto literal, que é formatado em JSON para ser mandado
+        //para o protocolo HTTP, indo para o servidor e por fim armazenando o valor
+        //-------------------classe----------------
+        class Produto{
+            constructor(){
+                this.nome = 'mouse'
+                this.marca = 'razer'
+                this.dps = 1200
+            }
+        }
+        //------------------analogamente------------
+        let prods = {
+            nome:'mouse',
+            marca:'razer',
+            dps:1200
+        }// pode ter qualquer tipo de variável, funções e até mesmo outros objetos
+    </script>
+</head>
+<body>
+
+</body>
+</html>
