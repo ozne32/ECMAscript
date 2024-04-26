@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>função factory</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //deixar a criação de objetos melhor, atribuindo uma função para a criaçaõ de determinados tipos de objeto
+       //ao ínves de ter que ficar escrevendo toda hora, let nome_variavel = {coisas} 
+       let FabricacaoPessoas= function(nome,idade,gosto_musical){
+        return{
+            nome,
+            idade,
+            gosto_musical
+        }
+       }
+       let pessoa1 = FabricacaoPessoas('enzo',17,'MPB')
+       console.log(pessoa1)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
