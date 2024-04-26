@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>função construtora</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //nesta primeira parte, o importante que foi destacado, foi como podemos utilzar está função para 
+       //colocarmos as mesmas coisas que tem em um constructor, porém podemos colocar métodos e etc
+       //também entra um pouco no assunto de encapsulamento, porém como já foi explicitado anteriormente, não 
+       // é algo concreto, é mais uma convenção 
+       let Noticia = function(){
+        this.titulo = 'noticia fake123'
+        this._descricao = 'hoje de manhã o sol nasceu como nunca'
+        this.getDescricao = () =>{
+            return this._descricao
+        }
+        this.setDescricao = (novaDescricao) =>{
+            this._descricao = novaDescricao
+        }
+       }
+       let noticia1 = new Noticia
+       console.log(noticia1.titulo) 
+       console.log(noticia1.getDescricao())
+       noticia1.setDescricao('hoje tem café da manhã')
+       console.log(noticia1.getDescricao())
+    </script>
+</head>
+<body>
+
+</body>
+</html>
