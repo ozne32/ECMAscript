@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //basicamente todos os objetos em javascript herdam de Object. e eu posso utilizar isso ao meu favor
+       //por exemplo, definindo que o prototype de 1 é igual ao do outro, fazendo assim, eles herdarem as coisas
+       //exemplo:
+
+       Object.prototype.coisa200 ='z'//isso é definir um valor para todos os objetos da aplicação, muito cuidado
+       let item1 ={
+        coisa1:'a'
+       }
+       let item2 ={
+        __proto__:item1,
+        coisa2:'b'
+       }
+       let item3 ={
+        __proto__:item2, //proto é tipo os itens que tem dentro de um objeto(pelo que eu entendi), por isso faz todo o sentido 
+        //então se eu tenho uma classe que geral herda com determinado item que tem as chaves e valores dentro dele, eu 
+        //posso utilizar aquilo para fazer o esquema de herança
+        coisa3:'c'
+       } //sem colocar o proto eu não poderia fazer coisas do tipo, item3.coisa2 ( daria como undefined), porém com 
+       // o proto dá tudo certo, pois eu estou me referindo ao prototipo de um no outro
+    </script>
+</head>
+<body>
+
+</body>
+</html>
