@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destruction assignment4</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //agora veremos como utilizar isso com o operador rest
+       //dá para utilizar da seguinte maneira
+       let frutas = ['maça','banana','pêra']
+       let [a,...fruts] = frutas 
+       console.log(a)
+       console.log(fruts)//ele exibira o resto das frutas, sem ser a primeira, que já está sendo incluida pelo a
+       //mesma coisa serve para objetos
+       let animal = {
+        cor:'preto',
+        idade:10,
+        orelha:'grande',
+        dono:{
+            nome:'enzo',
+            desenhoFav:'apenas um show'
+        }
+       } 
+       let {cor,...z}= animal
+       console.log(cor)
+       console.log(z)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

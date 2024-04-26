@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //agora falaremos de funções 
+       //mesma lógica de arrays e objetos só que aplicadas a funções
+       
+       let frutas = ['maçã','banana','pessego']
+       function frutasLista([a,b,c,d='manga']){
+        console.log(a,b,c,d)
+       }
+       frutasLista(frutas)//aqui está sendo encaminhado uma lista, então lá em cima na função, podemos utilizar os 
+       //mesmos recursos vistos anteriormente, até o valor default
+    </script>
+</head>
+<body>
+
+</body>
+</html>

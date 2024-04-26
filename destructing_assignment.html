@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        //é um jeito mais fácil de conseguir acessar certos elementos.
+        //normal
+        let frutas = ['maçã','banana','pessego']
+        let [a,b,c]= frutas //lado esquerdo os colcetes e do lado direito a lista, primeiro item = primeiro item de lá
+        console.log(a,b,c)
+        //se quiser pular é só deixar um espaço em branco 
+        let [y, ,x] = frutas
+        console.log(y,x)
+        //arrays em arrays
+        let coisas = [['enzo','ana'], ['maçã','banana','pessego']]
+        let [z,[n,m,r]] = coisas //z estaria se referenciando a primeira lista e n a segunda, se eu quiser alguma coisa
+        //dentro de uma lista especifica é só colocar outro colchete
+        console.log(z,n,m,r)
+        //importante ressaltar que eu posso colocar valores default, caso na minha lista não tenha um determinado item
+        //caso aquele indíce estiver ocupado por um valor, o valor que está nele será priorizado 
+        let animacao = ['hora de aventura','apenas um show']
+        let [item1,item2,item3= 'as trapalhadas de flapjack']=animacao
+        console.log(item3)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //quando falamos de objetos, ao ínves de colchetes utilizamos chaves
+       let animal = {
+        cor:'preto',
+        idade:10,
+        orelha:'grande',
+        dono:{
+            nome:'enzo',
+            desenhoFav:'apenas um show'
+        }
+       } 
+       //aqui você não pode colocar o nome de qualquer variável, porém na ordem, você coloca o nome msm, porém logo
+       //em seguida você pode atrelalo, um novo nome para que fique mais fácil de chamar dps no script
+       let {cor:c, idade:i} = animal
+       console.log(c,i)
+       //de forma análoga, também dá para adicionar parâmetros default
+       let{dono:{nome,desenhoFav}}=animal
+       console.log(nome,desenhoFav)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
