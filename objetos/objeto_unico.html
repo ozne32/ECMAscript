@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babel configuração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        //criamos o objeto, colocamos uma outra variável com o msm valor deste objeto.
+        //Portanto, tudo que nós fizermos neste objeto novo criado influenciará o objeto "tradicional"
+        //pois eles estão apontando para o mesmo lugar
+
+        let rua = {
+            pixacao:false,
+            indice_assalto:'baixo', 
+            lugar:'alphaville',
+            seguranca(){
+            //     if(indice_assalto == 'baixo'){
+            //         console.log('é seguro')
+            //     }else{
+            //         console.log('não é seguro')
+            //     }
+            // }
+            this.indice_assalto=='baixo'? console.log('é seguro'):console.log('não é seguro')
+            }
+        }
+        console.log(rua.indice_assalto)
+        console.log(rua.seguranca())
+        let a = rua //aqui a variável a está apontando para o objeto rua
+        a.indice_assalto = 'alto'
+        console.log(a.indice_assalto)
+        console.log(rua.indice_assalto)
+        console.log(a.seguranca())
+    </script>
+</head>
+<body>
+
+</body>
+</html>
