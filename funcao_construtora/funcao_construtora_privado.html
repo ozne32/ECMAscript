@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>função construtora privado</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //é basicamente quando nós utilizamos a msm técnica de função construtora para criar o objeto
+       //porém, agora conseguimos definir +- as variáveis que seram privadas, definindo elas com a palavra var
+       let Carro = function(){
+        var vel_maxima = 180
+        this._vel = 0
+        this.modelo = 'camaro'
+        this.cor = 'preto'
+        this.setVel = (velocidade)=>this._vel = velocidade
+        this.getVel = ()=> this._vel 
+        this.acelerar = function() {
+            let velocidade = this.getVel() + 50
+            if(velocidade > vel_maxima){
+                velocidade = vel_maxima
+            }
+            this.setVel(velocidade)
+        }
+       }
+       let carro = new Carro
+       console.log(carro) //perceba como nem aparece a vel_maxima aqui
+       carro.acelerar()
+       console.log(carro)
+       carro.acelerar()
+       console.log(carro)
+       carro.acelerar()
+       console.log(carro)
+       carro.acelerar()
+       carro.acelerar()
+       console.log(carro)
+       console.log(carro.vel)       
+    </script>
+</head>
+<body>
+
+</body>
+</html>
