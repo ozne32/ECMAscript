@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        // as arrows functions servem para você criar funções anônimas de modo mais simples.
+        // como as funções de callback são utilizadas muito frequentemente. É legal saber disso
+        
+        // função normal
+        let imprimiNome = function(nome){
+            return `oi ${nome}, tudo certo ?`
+        }
+        //função com arrow function
+        let imprimiIdade = idade =>{//se tiver só uma varíavel, pode omitir os ()
+            return `você tem ${idade} anos.`
+        }
+        document.write(imprimiNome('enzo'),' ', imprimiIdade(17), '<br>')
+        document.write(imprimiNome('outra coisa'),' ', imprimiIdade(17))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
