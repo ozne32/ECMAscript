@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos literais</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //como o recurso de objetos literais estava sendo utilizado com uma certa frequência,
+       //o time do ECMA decidiu colocar umas melhorias, mas antes vamos ver uma coisa interessante
+       //sobre como utilizar as variáveis que declaramos antes para colocar coisas dentro do objeto 
+       //literal 
+       let nome = 'enzo' 
+       let idade = 17
+       let sexo = 'masculino'
+
+       let pessoa = {
+        nome:nome,
+        idade:idade,
+        sexo:sexo,
+        exibirTexto:function(){//perceba como nos objetos literais também utiliza-se a palavra reservada this
+            console.log(`o usuário ${this.nome}, de ${this.idade} anos, foi registrado, com o sexo ${this.sexo}`)
+        }
+       }
+       pessoa.exibirTexto()
+       let pessoa1 = {
+        nome,//entende que nome = nome --> deixar mais enxuto
+        idade,
+        sexo,
+        exibirTexto(){//perceba como nos objetos literais também utiliza-se a palavra reservada this
+            console.log(`o usuário ${this.nome}, de ${this.idade} anos, foi registrado, com o sexo ${this.sexo}`)
+        }
+       }
+       pessoa1.exibirTexto()
+
+       //outra coisa que deve ser ressaltada é que se eu quiser eu posso mudar o nome, idade e sexo 
+       //exemplo 
+       console.log(pessoa1.nome)
+       pessoa1.nome = 'ana'
+       console.log(pessoa1.nome)
+       //podemos colocar novos atributos como bem entendermos
+
+       pessoa1.profissao = 'estudante'
+       //até mesmo funções
+       pessoa1.oiTexto = ()=>console.log(`oi eu sou à ${pessoa1.nome} `)
+       pessoa1.oiTexto()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
