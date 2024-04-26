@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>herança</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+        // a herança é basicamente colocar mais uma camada de abstração e tentar reduzir o objeto analisado à sua
+        // parte mais indívisivel
+        // animal --> cachorro, passaro --> border colie e papagaio
+        class Animal{
+            constructor(cor, energia,tamanho){
+                this.cor = 'preto'
+                this.energia = 10
+                this.tamanho = 'grande'
+            }
+            dormir(){
+                if (this.energia != 0){
+                    console.log('ele não está dormindo')
+                }else{
+                    console.log('ele está dormindo')
+                }
+            }
+            realizarAcao(){
+                if (this.energia !=0 ){
+                    console.log('ele consegue realizar a ação')
+                }else{
+                    console.log('ele não consegue realizar a ação')
+                }
+            }
+        }
+        class Cachorro extends Animal{ //usamos o extends para dizer que determinada classe pode herdar certas 
+            //caracteristicas e metodos da classe que vem após o extends
+            constructor(){
+                super()
+            }
+            rosnar(){
+                if(this.tamanho =='grande'){
+                    return true
+                }
+                else{
+                    return false
+                }
+            }
+        }
+        class BorderColie extends Cachorro{//perceba como isso funciona como uma cascata que vai herdando um do outro
+            //portanto eu não preciso herdar cachorro e animal juntamente.
+            constructor(){
+                super()
+                this.inteligencia = 'muita'
+            }
+        }
+        class Passaro extends Animal{
+            constructor(){
+                super()
+            }
+        }
+        class Papagaio extends Passaro{
+            constructor(){
+                super()
+                this.falar = true
+            }
+        }
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let borderColie = new BorderColie()
+        console.log(cachorro)
+        console.log(cachorro.dormir())
+        console.log(passaro)
+        console.log(passaro.dormir())
+        console.log(borderColie)
+        console.log(borderColie.dormir())//perceba como eu consigo herdar o método do meio mais abstraido desta classe
+        //que é o animal
+        
+        //a classe que sempre herda o super é a classe filho
+    </script>
+</head>
+<body>
+
+</body>
+</html>
