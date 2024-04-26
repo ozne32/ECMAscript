@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abstração</title>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type ='text/babel'> 
+       //cadeira --> curso fez
+       class Cadeira{
+        constructor(qtd_pes, giratoria,cor){
+            this.qtd_pes = qtd_pes
+            this.giratoria = giratoria
+            this.cor =  cor
+        }
+        girar(){
+            if (giratorio === true){
+                document.write('ela gira')
+            }else{
+                document.write('não gira')
+            }
+        }
+       } 
+       let cadeira = Array()
+       cadeira.push(new Cadeira(1,false,'azul'),new Cadeira(5,true,'preto'),new Cadeira(4,false,'cinza') )
+       console.log(cadeira)
+       class Sofa{
+        constructor(qualidade_alcochoado, qtd_pes,novo){
+            this.qualidade_alcochoado = qualidade_alcochoado
+            this.qtd_pes = qtd_pes
+            this.novo = novo
+        }
+        novo(){
+            if (novo === true){
+                return 'ele é novo'
+            }else{
+                return 'ele é seminovo'
+            }
+        }
+        apresentacao(){
+            return `Este sofá tem um alcochoado ${qualidade_alcochoado}, tem ${qtd_pes} pes`
+        }
+       }
+       let sofas = Array()
+       sofas.push(new Sofa('excelente',3,true),new Sofa('ótimo',4,false),new Sofa('perfeito',100,true), )
+       console.log(sofas)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
